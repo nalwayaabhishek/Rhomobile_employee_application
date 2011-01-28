@@ -1,0 +1,38 @@
+<div class="pageTitle">
+  <h1><%= @employee.name %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :index %>">Back</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a href="<%= url_for :action => :edit, :id => @employee.object %>">Edit</a>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    
+        <li>
+          <div class="itemLabel">Name</div>
+          <div class="itemValue"><%= @employee.name %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">Company</div>
+          <div class="itemValue"><%= @employee.company %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">Phno</div>
+          <div class="itemValue"><%= @employee.phno %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">Address</div>
+          <div class="itemValue"><%= @employee.address %></div>
+        </li>
+    
+  </ul>
+</div>

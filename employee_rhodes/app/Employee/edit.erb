@@ -1,0 +1,42 @@
+<div class="pageTitle">
+  <h1>Edit <%= @employee.name %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :show, :id => @employee.object %>">Cancel</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :delete, :id => @employee.object %>">Delete</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :update %>">
+    <input type="hidden" name="id" value="<%= @employee.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="employee[name]" class="fieldLabel">Name</label>
+            <input type="text" name="employee[name]" value="<%= @employee.name %>" <%= placeholder( "Name" ) %> />
+          </li>
+      
+          <li>
+            <label for="employee[company]" class="fieldLabel">Company</label>
+            <input type="text" name="employee[company]" value="<%= @employee.company %>" <%= placeholder( "Company" ) %> />
+          </li>
+      
+          <li>
+            <label for="employee[phno]" class="fieldLabel">Phno</label>
+            <input type="text" name="employee[phno]" value="<%= @employee.phno %>" <%= placeholder( "Phno" ) %> />
+          </li>
+      
+          <li>
+            <label for="employee[address]" class="fieldLabel">Address</label>
+            <input type="text" name="employee[address]" value="<%= @employee.address %>" <%= placeholder( "Address" ) %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Update"/>
+  </form>
+</div>

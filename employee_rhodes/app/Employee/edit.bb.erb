@@ -1,0 +1,39 @@
+<div id="pageTitle">
+		<h1>Edit <%= @employee.name%></h1>
+</div>
+
+<div id="toolbar">
+    <%= link_to "Back", :action => :show, :id => @employee.object %>
+    <%= link_to "Delete", :action => :delete, :id => @employee.object %>
+</div>
+
+
+<div id="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+    	<input type="hidden" name="id" value="<%= @employee.object %>"/>
+            <table>
+        		
+                    <tr>
+            			<td class="itemLabel">Name: </td>
+              			<td class="itemValue"><input type="text" name="employee[name]" value="<%= @employee.name %>"/></td>
+          		    </tr>
+        		
+                    <tr>
+            			<td class="itemLabel">Company: </td>
+              			<td class="itemValue"><input type="text" name="employee[company]" value="<%= @employee.company %>"/></td>
+          		    </tr>
+        		
+                    <tr>
+            			<td class="itemLabel">Phno: </td>
+              			<td class="itemValue"><input type="text" name="employee[phno]" value="<%= @employee.phno %>"/></td>
+          		    </tr>
+        		
+                    <tr>
+            			<td class="itemLabel">Address: </td>
+              			<td class="itemValue"><input type="text" name="employee[address]" value="<%= @employee.address %>"/></td>
+          		    </tr>
+        		
+            </table>
+            <input type="submit" class="standardButton" value="Update" />
+    </form>
+</div>
